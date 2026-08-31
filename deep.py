@@ -172,53 +172,54 @@ with tab1:
 
 # ---------------- TAB 2: TRAINING RESULTS ----------------
 with tab2:
-    if history:
-        losses = history["train_losses"]
-        accs = history["val_accuracies"]
+    st.markdown("Progressing")
+    # if history:
+    #     losses = history["train_losses"]
+    #     accs = history["val_accuracies"]
 
-        m1, m2, m3, m4 = st.columns(4)
-        with m1:
-            st.markdown(f'<div class="metric-box"><h3>{len(losses)}</h3><p>Epochs</p></div>', unsafe_allow_html=True)
-        with m2:
-            st.markdown(f'<div class="metric-box"><h3>{losses[-1]:.3f}</h3><p>Final Loss</p></div>', unsafe_allow_html=True)
-        with m3:
-            st.markdown(f'<div class="metric-box"><h3>{accs[-1]*100:.1f}%</h3><p>Final Accuracy</p></div>', unsafe_allow_html=True)
-        with m4:
-            improvement = (accs[-1] - accs[0]) * 100
-            st.markdown(f'<div class="metric-box"><h3>+{improvement:.1f}%</h3><p>Accuracy Gain</p></div>', unsafe_allow_html=True)
+    #     m1, m2, m3, m4 = st.columns(4)
+    #     with m1:
+    #         st.markdown(f'<div class="metric-box"><h3>{len(losses)}</h3><p>Epochs</p></div>', unsafe_allow_html=True)
+    #     with m2:
+    #         st.markdown(f'<div class="metric-box"><h3>{losses[-1]:.3f}</h3><p>Final Loss</p></div>', unsafe_allow_html=True)
+    #     with m3:
+    #         st.markdown(f'<div class="metric-box"><h3>{accs[-1]*100:.1f}%</h3><p>Final Accuracy</p></div>', unsafe_allow_html=True)
+    #     with m4:
+    #         improvement = (accs[-1] - accs[0]) * 100
+    #         st.markdown(f'<div class="metric-box"><h3>+{improvement:.1f}%</h3><p>Accuracy Gain</p></div>', unsafe_allow_html=True)
 
-        st.write("")
-        plt.style.use('dark_background')
-        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4))
-        fig.patch.set_facecolor('#0e1117')
+    #     st.write("")
+    #     plt.style.use('dark_background')
+    #     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(11, 4))
+    #     fig.patch.set_facecolor('#0e1117')
 
-        ax1.plot(range(1, len(losses)+1), losses, marker='o', color='#ff4b4b', linewidth=2)
-        ax1.set_title("Training Loss", fontsize=12, fontweight='bold')
-        ax1.set_xlabel("Epoch"); ax1.set_ylabel("Loss")
-        ax1.set_facecolor('#0e1117')
-        ax1.grid(alpha=0.2)
+    #     ax1.plot(range(1, len(losses)+1), losses, marker='o', color='#ff4b4b', linewidth=2)
+    #     ax1.set_title("Training Loss", fontsize=12, fontweight='bold')
+    #     ax1.set_xlabel("Epoch"); ax1.set_ylabel("Loss")
+    #     ax1.set_facecolor('#0e1117')
+    #     ax1.grid(alpha=0.2)
 
-        ax2.plot(range(1, len(accs)+1), accs, marker='o', color='#4bff88', linewidth=2)
-        ax2.set_title("Validation Accuracy", fontsize=12, fontweight='bold')
-        ax2.set_xlabel("Epoch"); ax2.set_ylabel("Accuracy")
-        ax2.set_facecolor('#0e1117')
-        ax2.grid(alpha=0.2)
+    #     ax2.plot(range(1, len(accs)+1), accs, marker='o', color='#4bff88', linewidth=2)
+    #     ax2.set_title("Validation Accuracy", fontsize=12, fontweight='bold')
+    #     ax2.set_xlabel("Epoch"); ax2.set_ylabel("Accuracy")
+    #     ax2.set_facecolor('#0e1117')
+    #     ax2.grid(alpha=0.2)
 
-        st.pyplot(fig)
+    #     st.pyplot(fig)
 
-        with st.expander("📋 Model Architecture Details"):
-            st.markdown("""
-            | Component | Details |
-            |---|---|
-            | Backbone | ResNet18 (pretrained on ImageNet) |
-            | Frozen parameters | 11,176,512 |
-            | Trainable parameters | 513 |
-            | Loss function | Binary Cross-Entropy |
-            | Optimizer | Adam (lr=0.001) |
-            | Batch size | 16 |
-            """)
-    else:
-        st.warning("⚠️ `training_history.json` not found. Run training with history-saving enabled to see graphs here.")
+    #     with st.expander("📋 Model Architecture Details"):
+    #         st.markdown("""
+    #         | Component | Details |
+    #         |---|---|
+    #         | Backbone | ResNet18 (pretrained on ImageNet) |
+    #         | Frozen parameters | 11,176,512 |
+    #         | Trainable parameters | 513 |
+    #         | Loss function | Binary Cross-Entropy |
+    #         | Optimizer | Adam (lr=0.001) |
+    #         | Batch size | 16 |
+    #         """)
+    # else:
+    #     st.warning("⚠️ `training_history.json` not found. Run training with history-saving enabled to see graphs here.")
 
 st.divider()
 st.caption("DEEPFAKE — Project by Yogesh, Ayush and Nitin")
