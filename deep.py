@@ -97,9 +97,7 @@ with st.sidebar:
 
     st.markdown("### ℹ️ About")
     st.markdown("""
-    **DEEPFAKE** is a small-scale image classification
-    project that detects whether a face image is
-    **real** or **AI-generated (fake)**.
+    **DEEPFAKE** is a small scale project  and please do not expect any accuracy and real world needed output from this model. **.
 
     **Approach:** Transfer Learning
     **Backbone:** ResNet18 (pretrained on ImageNet)
@@ -107,8 +105,7 @@ with st.sidebar:
     **Dataset:** ~924 real & fake face images
     (Kaggle — 140k Real and Fake Faces)
 
-    This is an educational, proof-of-concept
-    build — not a production-grade system.
+    This is a simple model trained on just 500 parameters to please do not expect that much great results.
     """)
 
     st.divider()
