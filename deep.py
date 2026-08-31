@@ -224,4 +224,4 @@ with tab2:
         st.warning("⚠️ `training_history.json` not found. Run training with history-saving enabled to see graphs here.")
 
 st.divider()
-st.caption("DEEPFAKE — Educational deepfake detection project · ResNet18 transfer learning · Not production-grade")
+st.caption("DEEPFAKE — Project by Yogesh, Ayush and Nitin")
