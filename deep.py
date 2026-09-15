@@ -196,7 +196,7 @@ with tab1:
             st.info("👈 Upload an image to see the prediction here.")
 
     with col3:
-        st.markdown("#### Grad-CAM")
+        st.markdown("#### Heat map")
         if uploaded:
             st.image(cam_image, use_container_width=True)
             st.caption("Highlighted regions influenced the model's decision most.")
