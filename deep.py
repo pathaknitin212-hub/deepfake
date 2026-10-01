@@ -255,7 +255,7 @@ with tab2:
         st.warning("⚠️ `training_history.json` not found. Run training with history-saving enabled to see graphs here.")
 
 st.divider()
-st.caption("DEEPFAKE — Project by Yogesh, Ayush and Nitin")
+st.caption("DEEPFAKE — Project by Yogesh, Ayush, Ashish, Abhay and Nitin")
 
 
 
